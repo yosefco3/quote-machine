@@ -20,10 +20,11 @@ class App extends Component {
   
   }
 
+//  set number to quotenumber of the state
   assignNewQuoteIndex=()=>{
     this.setState({quoteNumber:this.selectQuoteIndex()})
   }
-
+// select number randomly from 0 to quotes length
   selectQuoteIndex=()=>{
     if (!this.state.quotes.length){
       return;
@@ -33,6 +34,7 @@ class App extends Component {
 
   
 
+  // return quote object
   selectQuote=()=>{
     if (!this.state.quotes.length){
       return;
@@ -42,23 +44,25 @@ class App extends Component {
   }
 
   render(){
-    
+    // text-center is bootstrap class
     return (
     <div className="App text-center">
+
+    {/* we use the terinary oprator of js to append the component 
+    and the props just if a quote has selected: */}
 
     {this.selectQuote() ?
       <QuoteMachine 
       quote={this.selectQuote().quote} 
       author={this.selectQuote().author}
+      // that method goes to the button in quote machine componenet:
       assignNewQuoteIndex={this.assignNewQuoteIndex}  
       />
       : ""
-    }
-      
-      
+    }  
     </div>
-  );
-    }
+    );
+  }
 
 }
 

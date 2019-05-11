@@ -17,7 +17,7 @@ const QuoteMachine =({quote,author,assignNewQuoteIndex})=>{
 
         <a id="tweet-quote" target="_blank" rel="noopener noreferrer"
         className="btn btn-lg btn-success mx-3" 
-        href={`https://twitter.com/intent/tweet?text="${quote}"-${author}`}>twit</a>
+        href={`https://twitter.com/intent/tweet?text="${quote}"-${author}`}>Twit</a>
         
         </div>
     )
